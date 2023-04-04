@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class CollisionDetection : MonoBehaviour
 {
-    public int _hatred;
     // Start is called before the first frame update
     void Start()
     {
