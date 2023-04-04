@@ -19,28 +19,28 @@ public class TriggersAndButtons : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             //Reset the "Crouch" trigger
-            _playerAnimator.ResetTrigger("RunForward");
+            _playerAnimator.SetTrigger("RunForward");
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
             //Reset the "Crouch" trigger
-            _playerAnimator.ResetTrigger("RunBackward");
+            _playerAnimator.SetTrigger("RunBackward");
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
             //Reset the "Crouch" trigger
-            _playerAnimator.ResetTrigger("RunLeft");
+            _playerAnimator.SetTrigger("RunLeft");
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
             //Reset the "Crouch" trigger
-            _playerAnimator.ResetTrigger("RunRight");
+            _playerAnimator.SetTrigger("RunRight");
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //Reset the "Jump" trigger
-            _playerAnimator.ResetTrigger("Jump");
+            _playerAnimator.SetTrigger("Jump");
         }
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
