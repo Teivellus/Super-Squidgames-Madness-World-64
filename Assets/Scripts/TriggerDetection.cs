@@ -18,12 +18,17 @@ public class TriggerDetection : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider collision)
+    void OnTriggerStay(Collider collision)
     {
-        // if (collision.object)
+        //Easy!
+        if (collision.gameObject.name == "Player") {
+            Debug.Log("Wowsers");
+        } else {
+            Debug.Log("You are not the player, get out");
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(collision.gameObject.transform.up * 100);
+        }
     }
-
-    private void OnTriggerStay(Collider collision)
+    private void OnTriggerEnter(Collider collision)
     {
         
     }

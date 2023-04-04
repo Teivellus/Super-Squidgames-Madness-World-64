@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CollisionDetection : MonoBehaviour
 {
-    public int _cubeHatred;
+    public int _hatred;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,15 +18,13 @@ public class CollisionDetection : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collision) 
+    void OnCollisionEnter(Collision collision)
     {
-        // if(collision.gameObject == ("AntimatterCube"));
-        
-        
-        // if (collision)
-        // {    
-        //     Destroy(collision.gameObject);
-        //     Debug.Log("COLLIDE WORK!!!!!!!!!!!!");
-        // }
+        if (collision.gameObject.GetComponent<PlayerValues>()._hatred > 20)
+        {
+            Destroy(gameObject);
+            Debug.Log("Ouchies");
+            SceneManager.LoadScene(0);
+        }
     }
 }
