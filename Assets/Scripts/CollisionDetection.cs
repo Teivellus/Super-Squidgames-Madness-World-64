@@ -20,6 +20,8 @@ public class CollisionDetection : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        Debug.Log($"Ouch, {collision.gameObject.name} hit me.");
+
         if (collision.gameObject.GetComponent<PlayerValues>()._hatred > 20)
         {
             Destroy(gameObject);
