@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     // This must be linked to the object that has the "Character Controller" in the inspector. You may need to add this component to the object
     public CharacterController controller;
-    private Vector3 velocity;
+    public Vector3 velocity;
 
     // Customisable gravity
     public float gravity = -20f;
@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
 
     // So the script knows if you can jump!
-    private bool isGrounded;
+    public bool isGrounded;
 
     // How high the player can jump
     public float jumpHeight = 2f;
