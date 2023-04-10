@@ -16,8 +16,13 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 8f;
     public float speedH = 15.0f;
     public float speedV = 15.0f;
+    public float minTurnAngle = -90.0f;
+    public float maxTurnAngle = 0.0f;
     public float yaw = 0.0f;
     public float pitch = 0.0f;
+    private float rotX;
+    public float aimValue;
+
 
     // This must be linked to the object that has the "Character Controller" in the inspector. You may need to add this component to the object
     public CharacterController controller;
@@ -50,6 +55,10 @@ public class PlayerMovement : MonoBehaviour
         // These lines let the script rotate the player based on the mouse moving
         yaw += speedH * Input.GetAxis("Mouse X");
         pitch -= speedV * Input.GetAxis("Mouse Y");
+
+        rotX += Input.GetAxis("Mouse Y") * aimValue;
+        // clamp the vertical rotation
+        rotX = Mathf.Clamp(rotX, minTurnAngle, maxTurnAngle);
 
         // Get the Left/Right and Forward/Back values of the input being used (WASD, Joystick etc.)
         float x = Input.GetAxis("Horizontal");
